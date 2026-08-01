@@ -33,8 +33,10 @@ body{
 <p>ID:<br>
 MUSIC-PACK-001</p>
 
-<p>Status:<br>
-COMPILING...</p>
+<p>
+Status:<br>
+<span id="status">COMPILING...</span>
+</p>
 
 <p class="bar"> id="loading">
 ███████░░░░░░░░░░░
@@ -82,6 +84,11 @@ setInterval(() => {
     bar.textContent = frames[i];
     i = (i + 1) % frames.length;
 }, 400);
+</script>
+    <script>
+setTimeout(() => {
+    document.getElementById("status").textContent = "ALMOST READY...";
+}, 5000);
 </script>
 </body>
 </html>
