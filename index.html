@@ -36,7 +36,7 @@ MUSIC-PACK-001</p>
 <p>Status:<br>
 COMPILING...</p>
 
-<p class="bar">
+<p class="bar"> id="loading">
 ███████░░░░░░░░░░░
 </p>
 
@@ -63,6 +63,25 @@ Please come back later.
 <hr>
 
 <p>EvanOS Update Service</p>
+<script>
+const bar = document.getElementById("loading");
 
+const frames = [
+"█░░░░░░░░░░░░░░░░",
+"███░░░░░░░░░░░░░░",
+"██████░░░░░░░░░░",
+"█████████░░░░░░░",
+"██████░░░░░░░░░░",
+"███░░░░░░░░░░░░░",
+"█░░░░░░░░░░░░░░░░"
+];
+
+let i = 0;
+
+setInterval(() => {
+    bar.textContent = frames[i];
+    i = (i + 1) % frames.length;
+}, 400);
+</script>
 </body>
 </html>
