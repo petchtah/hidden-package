@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Music Update Service</title>
+<title>Hidden_Module</title>
 
 <style>
 body{
@@ -18,6 +18,11 @@ body{
 .bar{
     letter-spacing:2px;
 }
+
+hr{
+    border:none;
+    border-top:1px solid #111;
+}
 </style>
 
 </head>
@@ -30,15 +35,17 @@ body{
 
 <p><b>Secret module FOUND.</b></p>
 
-<p>ID:<br>
-MUSIC-PACK-001</p>
+<p>
+ID:<br>
+MUSIC-PACK-001
+</p>
 
 <p>
 Status:<br>
 <span id="status">COMPILING...</span>
 </p>
 
-<p class="bar"> id="loading">
+<p class="bar" id="loading">
 ███████░░░░░░░░░░░
 </p>
 
@@ -46,26 +53,31 @@ Status:<br>
 This package is not ready yet.
 </p>
 
- <p>
+<p>
 Looks like someone is still listening.
-     </p>
-     <p>
-Estimated release: <br>
-         Unknown
-     </p>
-    
+</p>
+
+<p>
+Estimated release:<br>
+<span id="release">Unknown</span>
+</p>
+
 <p>
 Please come back later.
 </p>
-     <p>
-    Developer note: <br>
-         "Some things just need a little more time"
-     </p>
+
+<p>
+Developer note:<br>
+"Some things just need a little more time"
+</p>
 
 <hr>
 
-<p>EvanOS Update Service</p>
+<p>EvanOS 26.0 Update Service</p>
+
+
 <script>
+
 const bar = document.getElementById("loading");
 
 const frames = [
@@ -73,9 +85,9 @@ const frames = [
 "███░░░░░░░░░░░░░░",
 "██████░░░░░░░░░░",
 "█████████░░░░░░░",
-"██████░░░░░░░░░░",
-"███░░░░░░░░░░░░░",
-"█░░░░░░░░░░░░░░░░"
+"████████████░░░░",
+"███████████████░",
+"████████████████"
 ];
 
 let i = 0;
@@ -84,11 +96,19 @@ setInterval(() => {
     bar.textContent = frames[i];
     i = (i + 1) % frames.length;
 }, 400);
-</script>
-    <script>
+
+
 setTimeout(() => {
-    document.getElementById("status").textContent = "ALMOST READY...";
+    document.getElementById("status").textContent = "FINALIZING...";
 }, 5000);
+
+
+setTimeout(() => {
+    document.getElementById("status").textContent = "WAITING FOR RELEASE...";
+    document.getElementById("release").textContent = "Soon";
+}, 9000);
+
 </script>
+
 </body>
 </html>
